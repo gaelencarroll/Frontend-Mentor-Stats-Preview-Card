@@ -1,0 +1,170 @@
+:root{
+    --main-background:  hsl(233, 47%, 7%);
+    --card-background: hsl(244, 38%, 16%);
+    --accent: hsl(277, 64%, 61%);
+    --main-heading-stats: hsl(0, 0%, 100%);
+    --main-paragraph: hsla(0, 0%, 100%, 0.75);
+    --stat-headings: hsla(0, 0%, 100%, 0.6);
+    --font-size: 15px;
+    --font-inter: 'Inter', sans-serif;
+    --font-lexend: 'Lexend Deca', sans-serif;
+    --desktop-size: 1440px;
+    --mobile-size: 375px;
+    --card-width: 725px;
+    --card-height: 300px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-border{
+    width: 925px;
+    height: 500px;
+    background-color: var(--main-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-card{
+    display: flex;
+    justify-content: center;
+}
+
+.img-section{
+    position: relative;
+}
+
+.image{
+    background-image: url('./images/image-header-desktop.jpg');
+    height: var(--card-height);
+    width: calc(var(--card-width)/2);
+    background-size: cover;
+    margin: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.accent-overlay{
+    position: absolute;
+    background-color: var(--accent);
+    z-index: 2;
+    height: var(--card-height);
+    width: calc(var(--card-width)/2);
+    opacity: 0.4;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card-info{
+    height: var(--card-height);
+    width: calc(var(--card-width)/2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--card-background);
+    padding: 40px;
+    padding-right: 70px;
+    box-sizing: border-box;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+}
+
+.main-title{
+    color: var(--main-heading-stats);
+    font-family: var(--font-inter);
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.purple-word{
+    color: var(--accent);
+}
+
+.main-paragraph{
+    text-align: left;
+    color: var(--main-paragraph);
+    margin: 0;
+    font-family: var(--font-inter);
+    font-size: 0.65rem;
+    font-weight: 400;
+    line-height: 170%;
+}
+
+.stats-section{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    height: 3rem;
+}
+
+.statistics{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.stat.companies{
+    text-transform: lowercase;
+}
+
+.stat{
+    font-family: var(--font-inter);
+    color: var(--main-heading-stats);
+    font-weight: 700;
+    margin: 0;
+}
+
+.txt{
+    font-family: var(--font-lexend);
+    color: var(--stat-headings);
+    font-size: 0.6rem;
+    margin: 0;
+}
+
+@media screen and (max-width: 375px) {
+    body{
+        background-color: var(--main-background);
+        flex-direction: column;
+    }
+
+    .card-border{
+        height: 600px;
+        width: 375px;
+    }
+
+    .main-card{
+        flex-direction: column-reverse;
+        width: 300px;
+        height: 700px;
+        border-radius: 10px;
+    }
+
+    .image, .accent-overlay{
+        height: 200px;
+        width: 300px;
+    }
+
+    .card-info{
+        width: 300px;
+        height: 400px;
+        padding: 40px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+
+    .stats-section{
+        flex-direction: column;
+        height: 30%;
+    }
+}
